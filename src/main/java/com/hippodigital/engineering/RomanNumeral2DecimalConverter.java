@@ -4,12 +4,18 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
+/**
+ * A Utility Class for converting Roman Numerals to their decimal equivalent
+ */
 public final class RomanNumeral2DecimalConverter {
 	
 	private static final String NULL_ROMAN_NUMERAL_EXCEPTION_MESSAGE = "The provided Roman Numeral was Null";
 	private static final String EMPTY_ROMAN_NUMERAL_EXCEPTION_MESSAGE = "The provided Roman Numeral was Empty";
 	private static final String INVALID_CHARACTER_EXCEPTION_MESSAGE = "The provided Roman Numeral has an invalid character '%s' at index: %s";
 	
+	/**
+	 * Holds the mapping for each Roman Numeral Character and it's decimal value
+	 */
 	private static final Map<Character, Integer> romanNumeralCharacterDecimalValueMap;
 	
 	static {
@@ -29,9 +35,15 @@ public final class RomanNumeral2DecimalConverter {
 	}
 	
 	private RomanNumeral2DecimalConverter() {
-		// Is now a static class
+		// Is now a static utility class
 	}
 
+	/**
+	 * Converted the provided Roman Numeral to its equivalent decimal value
+	 * 
+	 * @param romanNumeral - the Roman Numeral to be converted
+	 * @return the converted decimal value
+	 */
 	public static long toDecimal(String romanNumeral) {
 		Objects.requireNonNull(romanNumeral, NULL_ROMAN_NUMERAL_EXCEPTION_MESSAGE);
 		
